@@ -1,2 +1,61 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@theme {
+  --color-cream: #FAF7F2;
+  --color-cream-dark: #F0EBE3;
+  --color-warm: #D97706;
+  --color-warm-light: #FEF3C7;
+  --color-warm-dark: #92400E;
+  --color-earth: #78716C;
+  --color-earth-dark: #44403C;
+  --color-bark: #292524;
+
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-cream);
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60%, 100% { transform: rotate(0deg); }
+}
+
+.wave {
+  animation: wave 2.5s infinite;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+.warm-card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid var(--color-cream-dark);
+  transition: all 0.3s ease;
+}
+
+.warm-card:hover {
+  box-shadow: 0 10px 40px rgba(217, 119, 6, 0.08);
+  transform: translateY(-2px);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  transform: scale(1.05);
+}
